@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/lake">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        style="@style/ActionBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/change_theme"
+        android:onClick="changeTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_view" />
 
     <EditText
         android:id="@+id/editTextText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="16dp"
+        style="@style/editText"
+        android:layout_width="@dimen/editText_height_and_width"
+        android:layout_height="@dimen/editText_height_and_width"
         android:ems="10"
         android:enabled="false"
-        android:lines="12"
         android:gravity="end"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
-        android:padding="8dp"
+        android:lines="12"
         android:text="@string/_0"
-        android:textColor="@color/black"
-        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
@@ -30,51 +39,47 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonC"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:text="@string/c"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="20sp" />
+                android:textColor="@android:color/holo_red_dark" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonLeftHawk"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/left_hawk"
-                android:textSize="20sp" />
+                android:text="@string/left_hawk" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonRightHawk"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/right_hawk"
-                android:textSize="20sp" />
+                android:text="@string/right_hawk" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonDelete"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/del"
-                android:textSize="20sp" />
+                android:text="@string/del" />
         </LinearLayout>
 
         <LinearLayout
@@ -82,41 +87,37 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button1"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_1"
-                android:textSize="20sp" />
+                android:text="@string/_1" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button2"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_2"
-                android:textSize="20sp" />
+                android:text="@string/_2" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button3"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_3"
-                android:textSize="20sp" />
+                android:text="@string/_3" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPlus"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/plus"
-                android:textSize="20sp" />
+                android:text="@string/plus" />
         </LinearLayout>
 
         <LinearLayout
@@ -124,41 +125,37 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button4"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_4"
-                android:textSize="20sp" />
+                android:text="@string/_4" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button5"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_5"
-                android:textSize="20sp" />
+                android:text="@string/_5" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button6"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_6"
-                android:textSize="20sp" />
+                android:text="@string/_6" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMinus"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/minus"
-                android:textSize="20sp" />
+                android:text="@string/minus" />
         </LinearLayout>
 
         <LinearLayout
@@ -166,41 +163,38 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button7"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_7"
-                android:textSize="20sp" />
+                android:text="@string/_7" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button8"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_8"
-                android:textSize="20sp" />
+                android:text="@string/_8" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button9"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_9"
-                android:textSize="20sp" />
+                android:text="@string/_9" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMultiply"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/multiply"
-                android:textSize="20sp" />
+                android:text="@string/multiply" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -208,42 +202,39 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonEquals"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:text="@string/equals"
-                android:textColor="@android:color/holo_green_dark"
-                android:textSize="20sp" />
+                android:textColor="@android:color/holo_green_dark" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button0"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/_0"
-                android:textSize="20sp" />
+                android:text="@string/_0" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonComma"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/comma"
-                android:textSize="20sp" />
+                android:text="@string/comma" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonDivide"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="@string/divide"
-                android:textSize="20sp" />
+                android:text="@string/divide" />
+
         </LinearLayout>
     </LinearLayout>
 

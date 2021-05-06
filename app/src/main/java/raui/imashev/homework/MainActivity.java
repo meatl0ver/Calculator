@@ -2,9 +2,11 @@ package raui.imashev.homework;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 
 import android.annotation.SuppressLint;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
@@ -162,8 +164,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonEquals:
                 String expression = editText.getText().toString();
                 if (expression.contains("+") || expression.contains("-")
-                        || expression.contains("×") || expression.contains("÷"))
-                {
+                        || expression.contains("×") || expression.contains("÷")) {
                     editText.setText(String.format("%s\n%s", text, multiply(expression)));
                 }
                 break;
@@ -200,4 +201,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return resStr;
     }
 
+    //кнопка для изменения темы
+    public void changeTheme(View view) {
+        int currentNightMode = AppCompatDelegate.getDefaultNightMode();
+        if (currentNightMode == AppCompatDelegate.MODE_NIGHT_YES) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+    }
 }
