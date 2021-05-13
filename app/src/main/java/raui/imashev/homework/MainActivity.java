@@ -2,28 +2,28 @@ package raui.imashev.homework;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
 
 import android.annotation.SuppressLint;
-import android.content.res.Configuration;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
+import static raui.imashev.homework.R.id.buttonC;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText editText;
-    private final String TEXT = "text";
+    private static final String TEXT = "text";
     private String text;
 
     @Override
@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         editText = findViewById(R.id.editTextText);
-        ArrayList<Button> buttons = new ArrayList<>();
-        buttons.add(findViewById(R.id.buttonC));
+        List<Button> buttons = new ArrayList<>();
+        buttons.add(findViewById(buttonC));
         buttons.add(findViewById(R.id.buttonDelete));
         buttons.add(findViewById(R.id.buttonPlus));
         buttons.add(findViewById(R.id.buttonMinus));
@@ -70,95 +70,95 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         savedInstanceState.getString(TEXT);
     }
 
-    @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         text = editText.getText().toString();
-        if (text.equals("0")) text = "";
+        if (text.equals(getString(R.string._0))) text = "";
         switch (v.getId()) {
             case R.id.buttonC:
-                editText.setText("0");
+                editText.setText(getString(R.string._0));
                 break;
             case R.id.button0:
-                if (text.equals("0")) {
-                    editText.setText("0");
+                if (text.equals(getString(R.string._0))) {
+                    editText.setText(getString(R.string._0));
                 } else {
-                    editText.setText(text + "0");
+                    editText.setText(String.format("%s%s", text, getString(R.string._0)));
                 }
                 break;
             case R.id.button1:
-                editText.setText(text + "1");
+                editText.setText(String.format("%s%s", text, getString(R.string._1)));
                 break;
             case R.id.button2:
-                editText.setText(text + "2");
+                editText.setText(String.format("%s%s", text, getString(R.string._2)));
                 break;
             case R.id.button3:
-                editText.setText(text + "3");
+                editText.setText(String.format("%s%s", text, getString(R.string._3)));
                 break;
             case R.id.button4:
-                editText.setText(text + "4");
+                editText.setText(String.format("%s%s", text, getString(R.string._4)));
                 break;
             case R.id.button5:
-                editText.setText(text + "5");
+                editText.setText(String.format("%s%s", text, getString(R.string._5)));
                 break;
             case R.id.button6:
-                editText.setText(text + "6");
+                editText.setText(String.format("%s%s", text, getString(R.string._6)));
                 break;
             case R.id.button7:
-                editText.setText(text + "7");
+                editText.setText(String.format("%s%s", text, getString(R.string._7)));
                 break;
             case R.id.button8:
-                editText.setText(text + "8");
+                editText.setText(String.format("%s%s", text, getString(R.string._8)));
                 break;
             case R.id.button9:
-                editText.setText(text + "9");
+                editText.setText(String.format("%s%s", text, getString(R.string._9)));
                 break;
             case R.id.buttonPlus:
-                if (editText.getText().toString().equals("0")) {
-                    editText.setText("0+");
+                if (editText.getText().toString().equals(getString(R.string._0))) {
+                    editText.setText(String.format("%s+", getString(R.string._0)));
                 } else {
-                    editText.setText(text + "+");
+                    editText.setText(String.format("%s+", text));
                 }
                 break;
             case R.id.buttonMinus:
                 if (editText.getText().toString().equals("0")) {
                     editText.setText("0-");
                 } else {
-                    editText.setText(text + "-");
+                    editText.setText(String.format("%s-", text));
                 }
                 break;
             case R.id.buttonMultiply:
-                if (editText.getText().toString().equals("0")) {
-                    editText.setText("0×");
+                if (editText.getText().toString().equals(getString(R.string._0))) {
+                    editText.setText(String.format("%s×", getString(R.string._0)));
                 } else {
-                    editText.setText(text + "×");
+                    editText.setText(String.format("%s×", text));
                 }
                 break;
             case R.id.buttonDivide:
                 if (editText.getText().toString().equals("0")) {
-                    editText.setText("0÷");
+                    editText.setText(String.format("%s÷", getString(R.string._0)));
                 } else {
-                    editText.setText(text + "÷");
+                    editText.setText(String.format("%s÷", text));
                 }
                 break;
             case R.id.buttonLeftHawk:
-                editText.setText(text + "(");
+                editText.setText(String.format("%s(", text));
                 break;
             case R.id.buttonRightHawk:
-                editText.setText(text + ")");
+                editText.setText(String.format("%s)", text));
                 break;
             case R.id.buttonComma:
                 if (editText.getText().toString().equals("0")) {
-                    editText.setText("0,");
+                    editText.setText(String.format("%s,", getString(R.string._0)));
                 } else {
-                    editText.setText(text + ",");
+                    editText.setText(String.format("%s,", text));
                 }
                 break;
             case R.id.buttonDelete:
                 if (text.length() > 1) {
                     editText.setText(text.substring(0, text.length() - 2));
                 } else {
-                    editText.setText("0");
+                    editText.setText(getString(R.string._0));
                 }
                 break;
             case R.id.buttonEquals:
@@ -201,13 +201,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return resStr;
     }
 
-    //кнопка для изменения темы
-    public void changeTheme(View view) {
-        int currentNightMode = AppCompatDelegate.getDefaultNightMode();
-        if (currentNightMode == AppCompatDelegate.MODE_NIGHT_YES) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }
+    //кнопка для перехода к настройкам
+    public void onClickToSettingsActivity(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 }

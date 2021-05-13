@@ -15,7 +15,7 @@
         android:onClick="changeTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_view" />
+        app:srcCompat="@android:drawable/ic_menu_manage" />
 
     <EditText
         android:id="@+id/editTextText"

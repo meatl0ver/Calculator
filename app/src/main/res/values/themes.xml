@@ -14,12 +14,12 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="button">
+    <style name="Button">
         <item name="android:textSize">@dimen/button_textSize</item>
         <item name="android:layout_margin">@dimen/button_margin</item>
     </style>
 
-    <style name="editText">
+    <style name="EditText">
         <item name="android:textSize">@dimen/editText_textSize</item>
         <item name="android:padding">@dimen/editText_padding</item>
         <item name="android:layout_margin">@dimen/editText_margin</item>
